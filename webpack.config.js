@@ -8,20 +8,22 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client',
         'webpack/hot/only-dev-server',
-        path.resolve(root, 'src/main.js')
+        path.resolve(root, 'app/main.js')
     ],
     output: {
-        path: path.resolve(root, 'dist'),
-        filename: 'bundle.js'
-    },
-    resolve:{
-        extensions: ['.js','.jsx']
+        path: path.resolve(root, 'build'),
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [
-            {test: /\.jsx?$/,  use: ['babel-loader'], exclude: /node_modules/},
-            { test: /\.less$/, use:['style-loader','css-loader','postcss-loader','less-loader'], exclude: /node_modules/ },
-            { test: /\.css$/,  use:['style-loader','css-loader','postcss-loader'], exclude: /node_modules/},
+            {test: /\.(js|jsx)?$/, use: ['babel-loader'], exclude: /node_modules/},
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+                exclude: /node_modules/
+            },
+            {test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader'], exclude: /node_modules/},
         ]
     },
     plugins: [
@@ -33,7 +35,7 @@ module.exports = {
     ],
     devServer: {
         hot: true,
-        contentBase: path.resolve(root, 'dist'),
+        contentBase: path.resolve(root, 'build'),
         publicPath: '/',
         port: 8709,
         historyApiFallback: true
