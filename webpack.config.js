@@ -11,8 +11,8 @@ module.exports = {
         path.resolve(root, 'src/main.js')
     ],
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(root, 'dist')
+        path: path.resolve(root, 'dist'),
+        filename: 'bundle.js'
     },
     resolve:{
         extensions: ['.js','.jsx']
