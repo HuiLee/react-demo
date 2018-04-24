@@ -1,5 +1,6 @@
 const path = require('path')
 const root = __dirname
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -15,5 +16,17 @@ module.exports = {
         rules: [
             {test: /\.jsx?$/, use: ['babel-loader'], exclude: /node_modules/}
         ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'React Demo',
+            template: path.resolve(root, 'template.html')
+        })
+    ],
+    devServer: {
+        contentBase: path.resolve(root, 'dist'),
+        publicPath: '/',
+        port: 8709,
+        historyApiFallback: true
     }
 }
