@@ -1,0 +1,19 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "RunningLee.Top Webpack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --config webpack.dev.js"
+  },
+  "author": "runninglee.top",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
