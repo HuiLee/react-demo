@@ -16,15 +16,19 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(root, 'dist')
     },
+    resolve:{
+        extensions: ['.js','.jsx']
+    },
     // loaders
     module: {
         rules: [
-            {test: /\.jsx?$/, use: ['babel-loader'], exclude: /node_modules/}
+            {test: /\.jsx?$/,  use: ['babel-loader'], exclude: /node_modules/},
+            { test: /\.less$/, use:['style-loader','css-loader','postcss-loader','less-loader'], exclude: /node_modules/ },
+            { test: /\.css$/,  use:['style-loader','css-loader','postcss-loader'], exclude: /node_modules/},
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'React Demo',
             template: path.resolve(root, 'template.html')
         }),
         new webpack.HotModuleReplacementPlugin(),
