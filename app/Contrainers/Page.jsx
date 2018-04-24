@@ -1,9 +1,8 @@
 import React from 'react'
+import Header from './../Components/Header'
+import Footer from './../Components/Footer'
 
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-
-class App extends React.Component {
+class Page extends React.Component {
     render() {
         return (
             <div>
@@ -13,4 +12,5 @@ class App extends React.Component {
         )
     }
 }
-export default App
+
+export default Page

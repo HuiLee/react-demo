@@ -11,9 +11,12 @@ module.exports = {
         path.resolve(root, 'app/main.js')
     ],
     output: {
-        path: path.resolve(root, 'build'),
-        filename: 'bundle.js',
+        path:path.resolve(__dirname, 'build'),
+        filename: '[name].[hash].bundle.js',
         publicPath: '/'
+    },
+    resolve:{
+        extensions: ['.js','.jsx']
     },
     module: {
         rules: [
@@ -38,6 +41,7 @@ module.exports = {
         contentBase: path.resolve(root, 'build'),
         publicPath: '/',
         port: 8709,
+        host:'0.0.0.0',
         historyApiFallback: true
     }
 }
