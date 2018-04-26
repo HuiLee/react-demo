@@ -8,7 +8,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client',
         'webpack/hot/only-dev-server',
-        path.resolve(root, 'app/main.js')
+        path.resolve(root, 'app/index.jsx')
     ],
     output: {
         path:path.resolve(__dirname, 'build'),

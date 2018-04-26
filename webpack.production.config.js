@@ -6,7 +6,7 @@ const root = __dirname
 module.exports = {
     mode: 'production',
     entry: {
-        app:path.resolve(root, 'app/main.js'),
+        app:path.resolve(root, 'app/index.jsx'),
         vendor:Object.keys(pkg.dependencies),
     },
     output: {
