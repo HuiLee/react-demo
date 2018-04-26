@@ -2,17 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import RouteMap from './router/routeMap'
-import { Router, hashHistory } from 'react-router';
-
-const render = () => {
+const render = (RouteMap) => {
     ReactDOM.render(
         <AppContainer>
-            <RouteMap history={hashHistory}/>
+            <RouteMap/>
         </AppContainer>,
         document.getElementById('app')
     )
 }
-render()
-// if (module.hot) {
-//     module.hot.accept('./App', () => render(App))
-// }
+render(RouteMap)
+if (module.hot) {
+    module.hot.accept('./router/RouteMap', () => render(RouteMap))
+}

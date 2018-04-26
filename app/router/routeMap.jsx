@@ -1,7 +1,9 @@
 import React from 'react'
-import {Router, Route} from 'react-router'
+import {Router, Route, hashHistory} from 'react-router'
 import Home from '../contrainers/Home'
 import App from '../contrainers/App'
+import createBrowserHistory from 'history/createBrowserHistory'
+const history = createBrowserHistory()
 
 class RouteMap extends React.Component {
     updateHandle() {
@@ -10,10 +12,8 @@ class RouteMap extends React.Component {
 
     render() {
         return (
-            <Router history={this.proper.history} onUpdate={this.updateHandle.bind(this)}>
-                <Route path='/' component={App}>
-                    <IndexRoute component={Home}/>
-                </Route>
+            <Router history={history}>
+                <Route path="/" component={Home}></Route>
             </Router>
         )
     }
