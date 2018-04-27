@@ -9,9 +9,9 @@ class RouteMap extends React.Component {
     updateHandle() {
         console.log('每次router变化之后都会触发')
     }
-
     render() {
         return (
+            //定义项目路由,History有新的变化，看4.x版本
             <Router history={history}>
                 <Route path="/" component={Home}></Route>
             </Router>
